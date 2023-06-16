@@ -6,7 +6,12 @@ public class playerMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
+    Vector2 mousePos;
     Vector2 moveDir;
+
+    public GameObject bulletPrefab;
+    public Transform startPoint;
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +26,18 @@ public class playerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized;
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, startPoint.position, startPoint.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
+        }
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
+        //Vector2 aiming = mousePos - rb.position;
     }
 }
