@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     public string npcName;
     public string[] dialogue;
     private int index;
-
+    public GameObject nextButton;
     public float wordSpeed;
     public bool playerIsClose;
 
@@ -23,7 +23,7 @@ public class NPC : MonoBehaviour
         {
             if(dialoguePanel.activeInHierarchy)
             {
-                zerotext();
+                EndText();
             }
             else
             {
@@ -33,9 +33,14 @@ public class NPC : MonoBehaviour
         }
 
         Name.text = npcName;
+        if (dialogueText.text == dialogue[index])
+        {
+            nextButton.SetActive(true);
+        }
+
     }
 
-    public void zerotext()
+    public void EndText()
     {
         dialogueText.text = "";
         index = 0;
@@ -51,8 +56,10 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void NextLine()
+    public void NextDialogue()
     {
+        nextButton.SetActive(false);
+
         if(index < dialogue.Length - 1)
         {
             index++;
@@ -61,7 +68,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            zerotext();
+            EndText();
         }
     }
 
@@ -77,8 +84,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            zerotext();
+            EndText();
         }
     }
-
 }
