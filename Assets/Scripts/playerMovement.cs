@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform startPoint;
     public float bulletSpeed;
+    public Animator panimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,10 @@ public class playerMovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
+        panimator.SetFloat("Horizontal", moveX);
+        panimator.SetFloat("Vertical", moveY);
+        panimator.SetFloat("Speed", moveDir.sqrMagnitude);
 
         moveDir = new Vector2(moveX, moveY).normalized;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
