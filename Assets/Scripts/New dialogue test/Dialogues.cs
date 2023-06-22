@@ -7,9 +7,8 @@ using TMPro;
 public class Dialogues : MonoBehaviour
 {
     [SerializeField]
-    private string[] sentences1;
-    [SerializeField]
-    private string[] sentences2;
+    private string[] sentences;
+    
 
     public GameObject[] answers;
     public TextMeshProUGUI dialogueText;
@@ -26,22 +25,13 @@ public class Dialogues : MonoBehaviour
     {
         
     }
-    public void DialogueOption1()
+    public void DialogueOption()
     {
         dialogueText.gameObject.SetActive(true);
         for (int i = 0; i < answers.Length; i++)
         {
             answers[i].SetActive(false);
         }
-        dialogueText.text = (sentences1[0]);
-    }
-    public void DialogueOption2()
-    {
-        dialogueText.gameObject.SetActive(true);
-        for (int i = 0; i < answers.Length; i++)
-        {
-            answers[i].SetActive(false);
-        }
-        dialogueText.text = (sentences2[0]);
+        dialogueText.text = (sentences[0]);
     }
 }
