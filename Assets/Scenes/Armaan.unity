@@ -467,6 +467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 899555979}
+  bulletPrefab: {fileID: 0}
+  startPoint: {fileID: 0}
+  bulletSpeed: 0
 --- !u!50 &899555979
 Rigidbody2D:
   serializedVersion: 4
@@ -3306,7 +3309,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1677055315}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: NextLine
+        m_MethodName: NextDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
