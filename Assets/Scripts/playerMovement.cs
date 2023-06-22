@@ -6,12 +6,12 @@ public class playerMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
-    Vector2 mousePos;
+    //Vector2 mousePos;
     Vector2 moveDir;
+    public Gun gun;
 
-    public GameObject bulletPrefab;
-    public Transform startPoint;
-    public float bulletSpeed;
+    public Animator panimator;
+    //public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,22 +22,29 @@ public class playerMovement : MonoBehaviour
    
     void Update()
     {
+        //Movement
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+        //Animation
+        panimator.SetFloat("Horizontal", moveX);
+        panimator.SetFloat("Vertical", moveY);
+        panimator.SetFloat("Speed", moveDir.sqrMagnitude);
+
         moveDir = new Vector2(moveX, moveY).normalized;
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(bulletPrefab, startPoint.position, startPoint.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
+            gun.Shoot();
         }
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
-        //Vector2 aiming = mousePos - rb.position;
+        /*Vector2 aiming = mousePos - rb.position;
+        float aimAngle = Mathf.Atan2(aiming.y, aiming.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;*/
     }
 }
