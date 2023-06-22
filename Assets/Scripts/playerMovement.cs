@@ -27,9 +27,9 @@ public class playerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         //Animation
-        panimator.SetFloat("Horizontal", moveX);
-        panimator.SetFloat("Vertical", moveY);
-        panimator.SetFloat("Speed", moveDir.sqrMagnitude);
+       panimator.SetFloat("Horizontal", moveX);
+       panimator.SetFloat("Vertical", moveY);
+       panimator.SetFloat("Speed", moveDir.sqrMagnitude);
 
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -38,11 +38,11 @@ public class playerMovement : MonoBehaviour
         {
             gun.Shoot();
         }
+        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
     }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
         /*Vector2 aiming = mousePos - rb.position;
         float aimAngle = Mathf.Atan2(aiming.y, aiming.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;*/
