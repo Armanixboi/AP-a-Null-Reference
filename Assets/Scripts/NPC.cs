@@ -9,13 +9,20 @@ public class NPC : MonoBehaviour
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI Name;
+    public Image npcImage;
+    public Image npcDialogueImage;
     public string npcName;
     public string[] dialogue;
     private int index;
     public GameObject nextButton;
     public float wordSpeed;
     public bool playerIsClose;
-
+    private void Start()
+    {
+        npcDialogueImage.sprite = npcImage.sprite;
+        Name.text = npcName;
+    }
+    
 
     void Update()
     {
@@ -31,8 +38,7 @@ public class NPC : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
-
-        Name.text = npcName;
+       
         if (dialogueText.text == dialogue[index])
         {
             nextButton.SetActive(true);
