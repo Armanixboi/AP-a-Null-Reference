@@ -17,10 +17,13 @@ public class NPC : MonoBehaviour
     public GameObject nextButton;
     public float wordSpeed;
     public bool playerIsClose;
+   
     private void Start()
     {
         npcDialogueImage.sprite = npcImage.sprite;
         Name.text = npcName;
+        
+        
     }
     
 
@@ -93,4 +96,5 @@ public class NPC : MonoBehaviour
             EndText();
         }
     }
+
 }
