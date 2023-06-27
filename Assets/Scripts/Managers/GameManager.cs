@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public NPC npcScript;
-    public bool playerIsClose;
+    public bool playerisclose;
     void Start()
     {
 
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(playerIsClose)
+        if(playerisclose)
         {
             npcScript.enabled = true;
         }
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            playerIsClose = true;
+            playerisclose = true;
         }
 
     }
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsClose = false;
+            playerisclose = false;
         }
     }
 }
