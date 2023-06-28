@@ -11,28 +11,23 @@ public class Newspaper : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && playerCanRead)
         {
             newsPaper.SetActive(true);
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && newsPaper.activeSelf)
+        else if(Input.GetKeyDown(KeyCode.Escape) && newsPaper.activeSelf)
         {
             newsPaper.SetActive(false);
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-
-
         if (other.CompareTag("Player"))
         {
             playerCanRead = true;  
         }
-
     }
     public void OnTriggerExit2D(Collider2D other)
     {
