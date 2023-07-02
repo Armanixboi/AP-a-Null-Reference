@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 10f;
+    public HealthSystem health;
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -21,8 +21,9 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.name == "Bullet")
         {
-            health = 0f;
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            health.Damage();
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
     }
 }
