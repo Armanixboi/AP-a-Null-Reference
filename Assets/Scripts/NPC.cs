@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     public GameObject nextButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool playThisDialogue;
    
     private void Start()
     {
@@ -67,17 +68,22 @@ public class NPC : MonoBehaviour
 
     public void NextDialogue()
     {
-        nextButton.SetActive(false);
+        if (playThisDialogue)
+        {
+            nextButton.SetActive(false);
 
-        if(index < dialogue.Length - 1)
-        {
-            index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
-        }
-        else
-        {
-            EndText();
+            if (index < dialogue.Length - 1)
+            {
+                index++;
+                dialogueText.text = "";
+                StartCoroutine(Typing());
+            }
+            else
+            {
+                EndText();
+                playThisDialogue = false;
+            }
+
         }
     }
 
