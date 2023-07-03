@@ -5,25 +5,31 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public HealthSystem health;
+    Vector3 lerpTest;
+    Vector3 initialColour;
+    Color initialColourTest;
     // Start is called before the first frame update
     void Start()
     {
-      
-    }
+        initialColourTest = this.gameObject.GetComponent<SpriteRenderer>().color;
 
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        //lerpTest = Vector3.Lerp(, , 1)
+        //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Bullet")
+        if(collision.gameObject.tag == "Bullet")
         {
-            //Destroy(this.gameObject);
+            Debug.Log("Collisiobn");
             health.Damage();
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            Update();
+           
+            //Destroy(this.gameObject);
         }
     }
 }
