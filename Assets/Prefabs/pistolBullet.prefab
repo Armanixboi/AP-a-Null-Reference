@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3695742472103946372}
   - component: {fileID: -3997767069291949193}
   - component: {fileID: 3994051849125361874}
+  - component: {fileID: -4139751917383793560}
   m_Layer: 0
   m_Name: pistolBullet
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 0.90730923, b: 0, a: 1}
   m_FlipX: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
+  health: {fileID: -4139751917383793560}
 --- !u!50 &3994051849125361874
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +137,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4139751917383793560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243018435400294435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8914206a228a473489abc17b3abcf729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  damageAmount: 1

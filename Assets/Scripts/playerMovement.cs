@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    public float ammo = 0f;
     public float speed;
     public Rigidbody2D rb;
     //Vector2 mousePos;
     Vector2 moveDir;
     public Gun gun;
+    //public HealthSystem health;
 
     public Animator panimator;
     //public Camera cam;
@@ -34,11 +36,21 @@ public class playerMovement : MonoBehaviour
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ammo > 0f)
         {
             gun.Shoot();
+            ammo -= 1f;
         }
         rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ammo")
+        {
+            ammo += 1f;
+            Destroy(collision.gameObject);
+        }
     }
 
     void FixedUpdate()
