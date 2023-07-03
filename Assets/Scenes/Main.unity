@@ -9280,6 +9280,7 @@ MonoBehaviour:
   - {fileID: 725333726}
   activatingShooting:
   - {fileID: 1195841295}
+  doors: {fileID: 1329941815}
 --- !u!61 &725333728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26459,18 +26460,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 255651888}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: NextDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1272950764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26652,9 +26641,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1329941817}
-  - component: {fileID: 1329941815}
   - component: {fileID: 1329941814}
   - component: {fileID: 1329941816}
+  - component: {fileID: 1329941815}
   m_Layer: 0
   m_Name: Door 2
   m_TagString: Untagged
@@ -26697,10 +26686,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1329941813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59694a3dbf397f9439c241a12952335a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8247276f52946c24c9b9f80c0f4cf4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1329941816}
+  doorCanOpen: 0
 --- !u!95 &1329941816
 Animator:
   serializedVersion: 5
