@@ -21,9 +21,7 @@ public class NPC : MonoBehaviour
    
     private void Start()
     {
-        npcDialogueImage.sprite = npcImage.sprite;
-        Name.text = npcName;
-        
+       
         
     }
     
@@ -38,6 +36,8 @@ public class NPC : MonoBehaviour
             }
             else
             {
+                npcDialogueImage.sprite = npcImage.sprite;
+                Name.text = npcName;
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
