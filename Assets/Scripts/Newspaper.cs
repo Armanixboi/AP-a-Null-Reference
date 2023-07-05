@@ -5,6 +5,7 @@ using UnityEngine;
 public class Newspaper : MonoBehaviour
 {
     public GameObject newsPaper;
+    public Animator newsPaperRead;
     public bool playerCanRead;
 
     void Start()
@@ -15,11 +16,11 @@ public class Newspaper : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && playerCanRead)
         {
-            newsPaper.SetActive(true);
+           OpenNewsPaper();
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && newsPaper.activeSelf)
         {
-            newsPaper.SetActive(false);
+            CloseNewsPaper();
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
@@ -39,5 +40,14 @@ public class Newspaper : MonoBehaviour
             newsPaper.SetActive(false);
         }
 
+    }
+    public void CloseNewsPaper()
+    {
+        newsPaper.SetActive(false);
+    }
+    public void OpenNewsPaper()
+    {
+        newsPaper.SetActive(true);
+        newsPaperRead.SetBool("read", true);
     }
 }
