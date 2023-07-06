@@ -614,8 +614,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38f0e7b6190572428a9cd1a7c428399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogues: []
-  npc: {fileID: 0}
+  dialoguesALL: []
+  currentDialogue: []
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  Name: {fileID: 0}
+  npcImage: {fileID: 0}
+  npcDialogueImage: {fileID: 0}
+  npcName: 
+  nextButton: {fileID: 0}
+  wordSpeed: 0
+  playerIsClose: 0
+  playThisDialogue: 0
 --- !u!1 &178957646
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,6 +9334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e709b3c48cb328c4d8a18d9816910e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerisclose: 0
   dialoguePanel: {fileID: 2143388032}
   dialogueText: {fileID: 1940791152}
   Name: {fileID: 1329638087}
@@ -9369,8 +9380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81eaaff44645bcc46ade4dbde60ab992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcScript: {fileID: 255651888}
-  playerisclose: 0
 --- !u!1 &284243411
 GameObject:
   m_ObjectHideFlags: 0
@@ -37685,6 +37694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e709b3c48cb328c4d8a18d9816910e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerisclose: 0
   dialoguePanel: {fileID: 2143388032}
   dialogueText: {fileID: 1940791152}
   Name: {fileID: 1329638087}
@@ -37769,8 +37779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81eaaff44645bcc46ade4dbde60ab992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcScript: {fileID: 1332461953}
-  playerisclose: 0
 --- !u!1 &1347485268
 GameObject:
   m_ObjectHideFlags: 0

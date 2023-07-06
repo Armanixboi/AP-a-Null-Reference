@@ -6,6 +6,10 @@ using TMPro;
 
 public class NPC : MonoBehaviour
 {
+    NPC npcScript;
+    public bool playerisclose;
+    DialogueManager dialogueManager;
+
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI Name;
@@ -18,13 +22,13 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
     public bool playThisDialogue;
-   
+
+
     private void Start()
     {
-       
-        
+        npcScript = this.GetComponent<NPC>();
+        dialogueManager = FindAnyObjectByType<DialogueManager>();
     }
-    
 
     void Update()
     {
@@ -68,8 +72,7 @@ public class NPC : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (playThisDialogue)
-        {
+            Debug.Log("Running");
             nextButton.SetActive(false);
 
             if (index < dialogue.Length - 1)
@@ -83,23 +86,22 @@ public class NPC : MonoBehaviour
                 EndText();
                 playThisDialogue = false;
             }
-
-        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            playerIsClose = true;
+            playerisclose = true;
+            dialogueManager.WhichDialogueIsActive();
         }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerIsClose = false;
-            EndText();
+            playerisclose = false;
         }
     }
 
