@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float timer;
     public HealthSystem health;
     public float damage = 1f;
+    public ParticleSystem bulletFeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("HIT");
             //Destroy(collision.gameObject);   
             health.Damage();
+            bulletFeed.Play();
         }
         
         
