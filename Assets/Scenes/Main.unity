@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogues: []
-  NPC: {fileID: 0}
+  npc: {fileID: 0}
 --- !u!1 &178957646
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 720a77c9d4bd057449dd842842be662c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b295f67a800ec144a2ed6b28bac5172, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9697,7 +9697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75f36f51feea7e141986bde5b6b24a4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d790b58361c5b86428dd8ef44b22e9c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

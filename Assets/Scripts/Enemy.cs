@@ -8,10 +8,12 @@ public class Enemy : MonoBehaviour
     Vector3 lerpTest;
     Vector3 initialColour;
     Color initialColourTest;
+    SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
-        initialColourTest = this.gameObject.GetComponent<SpriteRenderer>().color;
+        //initialColourTest = this.gameObject.GetComponent<SpriteRenderer>().color;
+        sprite = GetComponent<SpriteRenderer>();
 
     }
     // Update is called once per frame
@@ -19,16 +21,17 @@ public class Enemy : MonoBehaviour
     {
         //lerpTest = Vector3.Lerp(, , 1)
         //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("Collisiobn");
+            Debug.Log("Collision");
             health.Damage();
-            Update();
-           
+            sprite.color = new Color(1,0,0,0.5f);
+
             //Destroy(this.gameObject);
         }
     }
