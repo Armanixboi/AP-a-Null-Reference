@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
             gettingShot.SetBool("ifShot", true);
             //Destroy(this.gameObject);
         }
+
+        if(health.currentHealth <= 0f)
+        {
+            Destroy(this.gameObject);
+        }
        
     }
 

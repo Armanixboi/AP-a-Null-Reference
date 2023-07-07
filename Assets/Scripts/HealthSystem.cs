@@ -16,6 +16,6 @@ public class HealthSystem : MonoBehaviour
     // Update is called once per frame
     public void Damage()
     {
-        currentHealth -= damageAmount;
+        currentHealth = currentHealth - damageAmount;
     }
 }
