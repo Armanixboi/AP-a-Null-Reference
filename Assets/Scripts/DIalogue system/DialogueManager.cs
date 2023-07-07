@@ -8,29 +8,24 @@ using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject[] dialoguesALL; //Array of NPCS
-    public string[] currentDialogue;
-
-    int currentDialogIndex;
-
-
-    //Legacy
+    public bool playerIsClose;
+    DialogueManager dialogueManager;
     public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText; //replace this with the current active speaker
-    public TextMeshProUGUI Name;
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI npcName;
     public Image npcImage;
-    public Image npcDialogueImage;
-    public string npcName;
-    //public string[] currentDialogue;
+    public string[] dialogue;
     private int index;
     public GameObject nextButton;
     public float wordSpeed;
-    public bool playerIsClose;
-    public bool playThisDialogue;
+    public NPC npcScript;
+
+
 
     private void Start()
     {
-        currentDialogIndex = 0;
+        npcScript = this.GetComponent<NPC>();
+        dialogueManager = FindAnyObjectByType<DialogueManager>();
     }
 
     void Update()
@@ -43,14 +38,16 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                npcDialogueImage.sprite = npcImage.sprite;
-                Name.text = npcName;
+                dialogue = npcScript.npcdialogue;
+                npcImage = npcScript.npcDialogueImage;
+                npcName.text = npcScript.npcDialogueName;
+
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
         }
 
-        if (dialogueText.text == currentDialogue[index])
+        if (dialogueText.text == dialogue[index])
         {
             nextButton.SetActive(true);
         }
@@ -66,7 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator Typing()
     {
-        foreach (char letter in currentDialogue[index].ToCharArray())
+        foreach (char letter in dialogue[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
@@ -78,7 +75,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Running");
         nextButton.SetActive(false);
 
-        if (index < currentDialogue.Length - 1)
+        if (index < dialogue.Length - 1)
         {
             index++;
             dialogueText.text = "";
@@ -87,21 +84,9 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndText();
-            playThisDialogue = false;
         }
     }
 
-    public void WhichDialogueIsActive()
-    {
-        Debug.Log("WhichDialogueIsActive");
-        for (int i = 0; i < dialoguesALL.Length; i++)
-        {
-            if (dialoguesALL[i].activeSelf == true)
-            {
-                dialoguesALL[i].GetComponent<NPC>().dialogue = currentDialogue;
-                Debug.Log(currentDialogue);
-            }
-        }
     
-    }
+
 }
