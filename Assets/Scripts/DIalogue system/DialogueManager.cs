@@ -9,7 +9,6 @@ using System.Linq;
 public class DialogueManager : MonoBehaviour
 {
     public bool playerIsClose;
-    DialogueManager dialogueManager;
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI npcName;
@@ -25,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         npcScript = this.GetComponent<NPC>();
-        dialogueManager = FindAnyObjectByType<DialogueManager>();
     }
 
     void Update()
@@ -39,7 +37,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 dialogue = npcScript.npcdialogue;
-                npcImage = npcScript.npcDialogueImage;
+                npcImage.sprite = npcScript.npcDialogueImage.sprite;
                 npcName.text = npcScript.npcDialogueName;
 
                 dialoguePanel.SetActive(true);
