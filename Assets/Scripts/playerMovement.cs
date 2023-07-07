@@ -7,17 +7,20 @@ public class playerMovement : MonoBehaviour
     public float ammo = 0f;
     public float speed;
     public Rigidbody2D rb;
+    public Ammo ammoScript;
+   // public bool canPickUpAmmo;
     //Vector2 mousePos;
     Vector2 moveDir;
     public Gun gun;
     //public HealthSystem health;
 
     public Animator panimator;
+
     //public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ammoScript = FindAnyObjectByType<Ammo>(); 
     }
 
     // Update is called once per frame
@@ -36,6 +39,12 @@ public class playerMovement : MonoBehaviour
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
+        if(Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
+        {
+            ammo += 1f;
+            ammoScript.DestroyAmmo();
+        }
+        
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
         {
             gun.Shoot();
@@ -44,15 +53,8 @@ public class playerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Ammo")
-        {
-            ammo += 1f;
-            Destroy(collision.gameObject);
-        }
-    }
 
+  
     void FixedUpdate()
     {
         /*Vector2 aiming = mousePos - rb.position;

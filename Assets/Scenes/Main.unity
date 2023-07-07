@@ -9198,7 +9198,7 @@ GameObject:
   - component: {fileID: 255651885}
   - component: {fileID: 255651890}
   m_Layer: 0
-  m_Name: Receptionist
+  m_Name: Receptionist - Anna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9243,7 +9243,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -6211030962572625068, guid: abfc86185128cba4d8358517ef4b2645, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9333,7 +9333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   npcDialogueImage: {fileID: 255651886}
-  npcDialogueName: Receptionist
+  npcDialogueName: Anna
   npcdialogue:
   - Hello
   - I can also talk!
@@ -37558,7 +37558,7 @@ GameObject:
   - component: {fileID: 1332461951}
   - component: {fileID: 1332461957}
   m_Layer: 0
-  m_Name: Watchman
+  m_Name: Watchman - Ahmed
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38088,6 +38088,7 @@ MonoBehaviour:
   ammo: 0
   speed: 3
   rb: {fileID: 1557024402}
+  ammoScript: {fileID: 0}
   gun: {fileID: 1195841295}
   panimator: {fileID: 1557024401}
 --- !u!212 &1557024404
@@ -38212,32 +38213,14 @@ GameObject:
   - component: {fileID: 1725367216}
   - component: {fileID: 1725367215}
   - component: {fileID: 1725367214}
-  - component: {fileID: 1725367213}
   - component: {fileID: 1725367220}
   m_Layer: 0
-  m_Name: Main Player
+  m_Name: Main Player - Hassan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1725367213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725367212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8733123ce65c4f34f914329d2538c8be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPref: {fileID: 1243018435400294435, guid: 008179cd8ae471d48adf4466651a5da4, type: 3}
-  startPoint: {fileID: 43079211}
-  bulletSpeed: 3
-  rb: {fileID: 1013351837}
-  cam: {fileID: 0}
 --- !u!61 &1725367214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38300,6 +38283,7 @@ MonoBehaviour:
   ammo: 0
   speed: 3
   rb: {fileID: 1725367215}
+  ammoScript: {fileID: 0}
   gun: {fileID: 1013351838}
   panimator: {fileID: 1725367217}
 --- !u!95 &1725367217
@@ -38382,7 +38366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725367212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.27, y: -4.79, z: 0}
+  m_LocalPosition: {x: 21.42, y: 19.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013351840}
@@ -40354,7 +40338,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -9095717837082945937, guid: c04dd2ad56f8c2a4a91d4287a149fc16, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
@@ -40407,7 +40391,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
