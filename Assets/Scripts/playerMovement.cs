@@ -13,7 +13,7 @@ public class playerMovement : MonoBehaviour
     Vector2 moveDir;
     public Gun gun;
     //public HealthSystem health;
-
+    public Animator spaceToPickUp;
     public Animator panimator;
 
     //public Camera cam;
@@ -38,11 +38,18 @@ public class playerMovement : MonoBehaviour
 
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        if(Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
+        if(ammoScript.canPickUpAmmo == true)
         {
-            ammo += 1f;
-            ammoScript.DestroyAmmo();
+            spaceToPickUp.SetBool("canpickup",true);
+        }
+        if(ammoScript.canPickUpAmmo == false)
+        {
+            spaceToPickUp.SetBool("canpickup",false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
+        {
+            PickedUpAmmo();
         }
         
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
@@ -53,7 +60,11 @@ public class playerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
     }
 
-
+    public void PickedUpAmmo()
+    {
+        ammo += 1f;
+        ammoScript.DestroyAmmo();
+    }
   
     void FixedUpdate()
     {
