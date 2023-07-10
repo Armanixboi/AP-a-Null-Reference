@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
     public DialogueManager dialogueManager;
     public Image npcDialogueImage;
     public string npcDialogueName;
-    public string[] npcdialogue;
+    public List<string> npcdialogue;
 
 
     private void Start()

@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI npcName;
     public Image npcImage;
-    public string[] dialogue;
+    public List<string> dialogue;
     private int index;
     public GameObject nextButton;
     public float wordSpeed;
@@ -23,11 +23,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        
         npcScript = this.GetComponent<NPC>();
+        dialogue = new List<string>();
     }
 
     void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Space) && playerIsClose)
         {
             if (dialoguePanel.activeInHierarchy)
@@ -46,10 +49,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         if (dialogueText.text == dialogue[index])
-        {
+        { 
             nextButton.SetActive(true);
         }
-
+        
     }
 
     public void EndText()
@@ -73,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Running");
         nextButton.SetActive(false);
 
-        if (index < dialogue.Length - 1)
+        if (index < dialogue.Count - 1)
         {
             index++;
             dialogueText.text = "";
