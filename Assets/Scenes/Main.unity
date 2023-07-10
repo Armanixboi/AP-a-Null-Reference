@@ -40346,7 +40346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -40430,7 +40430,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -9095717837082945937, guid: c04dd2ad56f8c2a4a91d4287a149fc16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0693e7413e3abe846ad05ceb49162e6e, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40538,14 +40538,6 @@ PrefabInstance:
     - target: {fileID: 8796627594354152465, guid: 48f48f678f975584296a3762aac47575, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796627594354152466, guid: 48f48f678f975584296a3762aac47575, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -9095717837082945937, guid: c04dd2ad56f8c2a4a91d4287a149fc16, type: 3}
-    - target: {fileID: 8796627594354152466, guid: 48f48f678f975584296a3762aac47575, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8796627594354152467, guid: 48f48f678f975584296a3762aac47575, type: 3}
       propertyPath: m_Name
