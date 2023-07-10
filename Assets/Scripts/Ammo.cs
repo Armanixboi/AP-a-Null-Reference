@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     public bool canPickUpAmmo;
+    public Animator ammo;
 
 
     public void OnTriggerEnter2D(Collider2D other)
