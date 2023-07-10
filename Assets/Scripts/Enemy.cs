@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class Enemy : MonoBehaviour
     Color initialColourTest;
     SpriteRenderer sprite;
     public Animator gettingShot;
+    public PostProcessVolume volume;
+    private float intensity;
+    private Vignette vig;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +28,7 @@ public class Enemy : MonoBehaviour
     {
         //lerpTest = Vector3.Lerp(, , 1)
         //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
+        volume.profile.TryGetSettings(out vig);
         
 
     }
@@ -35,6 +41,7 @@ public class Enemy : MonoBehaviour
             health.Damage();
             sprite.color = new Color(1,0,0,0.5f);
             gettingShot.SetBool("ifShot", true);
+            vig.intensity.value += .2f;
             //Destroy(this.gameObject);
         }
 

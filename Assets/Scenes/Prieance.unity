@@ -557,7 +557,9 @@ MonoBehaviour:
   ammo: 0
   speed: 3
   rb: {fileID: 278920081}
+  ammoScript: {fileID: 0}
   gun: {fileID: 276255297}
+  spaceToPickUp: {fileID: 0}
   panimator: {fileID: 278920076}
 --- !u!1 &470162820
 GameObject:
@@ -716,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 555729247}
   gettingShot: {fileID: 555729248}
+  volume: {fileID: 1846878034}
 --- !u!50 &555729246
 Rigidbody2D:
   serializedVersion: 4
@@ -860,7 +863,9 @@ MonoBehaviour:
   ammo: 0
   speed: 3
   rb: {fileID: 1497655779}
+  ammoScript: {fileID: 0}
   gun: {fileID: 109642856}
+  spaceToPickUp: {fileID: 0}
   panimator: {fileID: 1497655783}
 --- !u!212 &1497655781
 SpriteRenderer:
