@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        if (dialogueText.text == dialogue[index])
+        if (dialogue.Count > 0 && dialogueText.text == dialogue[index])
         { 
             nextButton.SetActive(true);
         }
