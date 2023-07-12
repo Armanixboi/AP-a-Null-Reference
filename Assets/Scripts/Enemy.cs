@@ -12,26 +12,23 @@ public class Enemy : MonoBehaviour
     Color initialColourTest;
     SpriteRenderer sprite;
     public Animator gettingShot;
-    public PostProcessVolume volume;
-    private float intensity;
-    private Vignette vig;
+    [SerializeField] PostProcessVolume volume;
+    bool increase;
+    float minSpeed;
+    float maxSpeed;
+    float speed;
+    Vignette vig;
     
     // Start is called before the first frame update
     void Start()
     {
         //initialColourTest = this.gameObject.GetComponent<SpriteRenderer>().color;
         sprite = GetComponent<SpriteRenderer>();
+        vig = volume.profile.GetSetting<Vignette>();
 
     }
     // Update is called once per frame
-    void Update()
-    {
-        //lerpTest = Vector3.Lerp(, , 1)
-        //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
-        volume.profile.TryGetSettings(out vig);
-        
-
-    }
+   
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,7 +38,9 @@ public class Enemy : MonoBehaviour
             health.Damage();
             sprite.color = new Color(1,0,0,0.5f);
             gettingShot.SetBool("ifShot", true);
-            vig.intensity.value += .2f;
+            increase = true;
+            //vig.intensity.value += speed * Time.deltaTime;
+            //vig.intensity.value += .2f;
             //Destroy(this.gameObject);
         }
 
@@ -50,6 +49,19 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
        
+    }
+
+    void Update()
+    {
+        //lerpTest = Vector3.Lerp(, , 1)
+        //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
+        //volume.profile.TryGetSettings(out vig);
+        if(increase)
+        {
+            vig.intensity.value += speed * Time.deltaTime;
+            vig.intensity.value = Mathf.Clamp(vig.intensity.value, minSpeed, maxSpeed);
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
