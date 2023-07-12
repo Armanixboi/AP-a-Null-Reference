@@ -20,5 +20,10 @@ public class UIClicker : MonoBehaviour
     public void ButtonClicked()
     {
         buttonClicker.SetBool("clicked", true);
+        Invoke("FalseAgain", 0.1f);
+    }
+    public void FalseAgain()
+    {
+        buttonClicker.SetBool("clicked", false);
     }
 }
