@@ -30,7 +30,7 @@ public class playerMovement : MonoBehaviour
         //Movement
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
+        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
         //Animation
        panimator.SetFloat("Horizontal", moveX);
        panimator.SetFloat("Vertical", moveY);
@@ -50,6 +50,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
         {
             PickedUpAmmo();
+            panimator.SetBool("ifPickedUpGun",true);
         }
         
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
@@ -57,7 +58,7 @@ public class playerMovement : MonoBehaviour
             gun.Shoot();
             ammo -= 1f;
         }
-        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
+        
     }
 
     public void PickedUpAmmo()
