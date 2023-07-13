@@ -56,12 +56,13 @@ public class playerMovement : MonoBehaviour
         {
             gunActivatorScript.ActivateObjects();
             gunActivatorScript.doors.DoorOpen();
+            panimator.SetBool("ifPickedUpGun", true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
         {
             PickedUpAmmo();
-            panimator.SetBool("ifPickedUpGun",true);
+            
         }
         
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
