@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door1 : MonoBehaviour
 {
     public Animator door;
-    [SerializeField] bool doorCanOpen = false;
+    public bool doorCanOpen;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

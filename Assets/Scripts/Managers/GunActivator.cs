@@ -27,6 +27,7 @@ public class GunActivator : MonoBehaviour
     }
     public void ActivateObjects()
     {
+        doors.doorCanOpen = true;
         foreach (GameObject obj in activatingObject)
         {
             obj.SetActive(true);
@@ -40,6 +41,5 @@ public class GunActivator : MonoBehaviour
         {
             obj.enabled = true;
         }
-
     }
 }

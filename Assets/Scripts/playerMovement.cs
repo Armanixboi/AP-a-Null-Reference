@@ -8,14 +8,17 @@ public class playerMovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public Ammo ammoScript;
-    public GunActivator gunActivatorScript;
-   // public bool canPickUpAmmo;
+    public GunActivator gunActivatorScript1;
+    public GunActivator gunActivatorScript2;
+    // public bool canPickUpAmmo;
     //Vector2 mousePos;
     Vector2 moveDir;
     public Gun gun;
     //public HealthSystem health;
-    public Animator spaceToPickUp;
+    public Animator spaceToPickUp1;
+    public Animator spaceToPickUp2;
     public Animator panimator;
+    public AudioSource gunShotSFX;
 
     //public Camera cam;
     // Start is called before the first frame update
@@ -41,22 +44,29 @@ public class playerMovement : MonoBehaviour
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         if(ammoScript.canPickUpAmmo == true )
         {
-            spaceToPickUp.SetBool("canpickup",true);
+            spaceToPickUp1.SetBool("canpickup",true);
         }
-        if (gunActivatorScript.canPickUpGun == true)
+        if (ammoScript.canPickUpAmmo == false)
         {
-            spaceToPickUp.SetBool("canpickup", true);
+            spaceToPickUp1.SetBool("canpickup", false);
         }
-        if (gunActivatorScript.canPickUpGun == false )
+        if (gunActivatorScript1.canPickUpGun == true)
         {
-            spaceToPickUp.SetBool("canpickup",false);
+            spaceToPickUp1.SetBool("canpickup", true);
+        }
+        if (gunActivatorScript1.canPickUpGun == false )
+        {
+            spaceToPickUp1.SetBool("canpickup",false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && gunActivatorScript.canPickUpGun)
+        if (Input.GetKeyDown(KeyCode.Space) && gunActivatorScript1.canPickUpGun)
         {
-            gunActivatorScript.ActivateObjects();
-            gunActivatorScript.doors.DoorOpen();
-            panimator.SetBool("ifPickedUpGun", true);
+            PickedUpGun();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && gunActivatorScript2.canPickUpGun)
+        {
+            PickedUpLevel2Ammo();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
@@ -64,11 +74,14 @@ public class playerMovement : MonoBehaviour
             PickedUpAmmo();
             
         }
+
         
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
         {
+            
             gun.Shoot();
             ammo -= 1f;
+            gunShotSFX.Play();
         }
         
     }
@@ -79,6 +92,18 @@ public class playerMovement : MonoBehaviour
         ammoScript.DestroyAmmo();
     }
   
+    public void PickedUpGun()
+    {
+        gunActivatorScript1.ActivateObjects();
+        panimator.SetBool("ifPickedUpGun", true);
+    }
+
+    public void PickedUpLevel2Ammo()
+    {
+        gunActivatorScript2.ActivateObjects();
+    }
+
+
     void FixedUpdate()
     {
         /*Vector2 aiming = mousePos - rb.position;
