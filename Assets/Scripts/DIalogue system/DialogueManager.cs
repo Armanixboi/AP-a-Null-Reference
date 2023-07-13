@@ -18,27 +18,29 @@ public class DialogueManager : MonoBehaviour
     public GameObject nextButton;
     public float wordSpeed;
     public NPC npcScript;
-
-
+    private bool dialogueFinished = true;
+    private bool finalDialogueFinished;
+    public playerMovement playerMovementScript;
 
     private void Start()
-    {
-        
+    {    
         npcScript = this.GetComponent<NPC>();
         dialogue = new List<string>();
     }
 
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose)
+
+        if (Input.GetKeyDown(KeyCode.Space) && playerIsClose && dialogueFinished)
         {
             if (dialoguePanel.activeInHierarchy)
             {
-                EndText();
+               // EndText();
             }
             else
             {
+                playerMovementScript.speed = 0;
+
                 dialogue = npcScript.npcdialogue;
                 npcImage.sprite = npcScript.npcDialogueImage.sprite;
                 npcName.text = npcScript.npcDialogueName;
@@ -46,10 +48,12 @@ public class DialogueManager : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
+            dialogueFinished = false;
         }
 
         if (dialogue.Count > 0 && dialogueText.text == dialogue[index])
-        { 
+        {
+            dialogueFinished = true;
             nextButton.SetActive(true);
         }
         
@@ -60,6 +64,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+        dialogueFinished = true;
+        playerMovementScript.speed = 3;
     }
 
     IEnumerator Typing()
@@ -85,6 +91,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndText();
+            Debug.Log("OVER");
         }
     }
 

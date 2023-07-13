@@ -708,6 +708,7 @@ MonoBehaviour:
   nextButton: {fileID: 1272950761}
   wordSpeed: 0.04
   npcScript: {fileID: 0}
+  playerMovementScript: {fileID: 1725367216}
 --- !u!1 &178957646
 GameObject:
   m_ObjectHideFlags: 0
@@ -48314,7 +48315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725367212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.03, y: 47.92, z: 0}
+  m_LocalPosition: {x: -1.28, y: -3.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013351840}
@@ -50848,6 +50849,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 643529674328089571, guid: 4cb38c968dddd6b42b18922e3432fbc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643529674328089576, guid: 4cb38c968dddd6b42b18922e3432fbc1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 643529674328089580, guid: 4cb38c968dddd6b42b18922e3432fbc1, type: 3}
