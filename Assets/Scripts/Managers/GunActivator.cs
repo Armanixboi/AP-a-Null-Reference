@@ -7,19 +7,25 @@ public class GunActivator : MonoBehaviour
     public List<GameObject> activatingObject = new List<GameObject>();
     public List<GameObject> deactivatingObject = new List<GameObject>();
     public List <Gun> activatingShooting  = new List<Gun>();
-    [SerializeField] Door1 doors;
+    public Door1 doors;
+    public bool canPickUpGun;
     
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            ActivateObjects();
-            doors.DoorOpen();
+            canPickUpGun = true;
         }
-        
     }
-    void ActivateObjects()
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canPickUpGun = false;
+        }
+    }
+    public void ActivateObjects()
     {
         foreach (GameObject obj in activatingObject)
         {

@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public Ammo ammoScript;
+    public GunActivator gunActivatorScript;
    // public bool canPickUpAmmo;
     //Vector2 mousePos;
     Vector2 moveDir;
@@ -38,13 +39,23 @@ public class playerMovement : MonoBehaviour
 
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if(ammoScript.canPickUpAmmo == true)
+        if(ammoScript.canPickUpAmmo == true )
         {
             spaceToPickUp.SetBool("canpickup",true);
         }
-        if(ammoScript.canPickUpAmmo == false)
+        if (gunActivatorScript.canPickUpGun == true)
+        {
+            spaceToPickUp.SetBool("canpickup", true);
+        }
+        if (gunActivatorScript.canPickUpGun == false )
         {
             spaceToPickUp.SetBool("canpickup",false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && gunActivatorScript.canPickUpGun)
+        {
+            gunActivatorScript.ActivateObjects();
+            gunActivatorScript.doors.DoorOpen();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
