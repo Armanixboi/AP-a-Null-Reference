@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Menu Button
+  m_Name: Quit Button
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -5118127082959668007, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
+      value: {fileID: 62126053121805971, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
     - time: 0.083333336
-      value: {fileID: 5640187551809499028, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
+      value: {fileID: -6767624193770541962, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
     - time: 0.16666667
-      value: {fileID: 9109637088012757923, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
+      value: {fileID: -333470296435740955, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -5118127082959668007, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
-    - {fileID: 5640187551809499028, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
-    - {fileID: 9109637088012757923, guid: 5c767ea9fe77d694e84b0d056c18491a, type: 3}
+    - {fileID: 62126053121805971, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
+    - {fileID: -6767624193770541962, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
+    - {fileID: -333470296435740955, guid: 2d27ad209879d81458bc1e32d3f534de, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
