@@ -7,7 +7,6 @@ public class playerMovement : MonoBehaviour
     public float ammo = 0f;
     public float speed;
     public Rigidbody2D rb;
-    public Ammo ammoScript;
     public GunActivator gunActivatorScript1;
     public GunActivator gunActivatorScript2;
     // public bool canPickUpAmmo;
@@ -16,7 +15,6 @@ public class playerMovement : MonoBehaviour
     public Gun gun;
     //public HealthSystem health;
     public Animator spaceToPickUp1;
-    public Animator spaceToPickUp2;
     public Animator panimator;
     public AudioSource gunShotSFX;
 
@@ -24,7 +22,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ammoScript = FindAnyObjectByType<Ammo>(); 
+
     }
 
     // Update is called once per frame
@@ -42,14 +40,7 @@ public class playerMovement : MonoBehaviour
 
         moveDir = new Vector2(moveX, moveY).normalized;
         //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if(ammoScript.canPickUpAmmo == true )
-        {
-            spaceToPickUp1.SetBool("canpickup",true);
-        }
-        if (ammoScript.canPickUpAmmo == false)
-        {
-            spaceToPickUp1.SetBool("canpickup", false);
-        }
+       
         if (gunActivatorScript1.canPickUpGun == true)
         {
             spaceToPickUp1.SetBool("canpickup", true);
@@ -69,12 +60,6 @@ public class playerMovement : MonoBehaviour
             PickedUpLevel2Ammo();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && ammoScript.canPickUpAmmo)
-        {
-            PickedUpAmmo();
-            
-        }
-
         
         if (Input.GetMouseButtonDown(0) && ammo > 0f)
         {
@@ -89,7 +74,6 @@ public class playerMovement : MonoBehaviour
     public void PickedUpAmmo()
     {
         ammo += 1f;
-        ammoScript.DestroyAmmo();
     }
   
     public void PickedUpGun()
