@@ -11,12 +11,12 @@ public class Enemy : MonoBehaviour
     Vector3 initialColour;
     Color initialColourTest;
     SpriteRenderer sprite;
-    public Animator gettingShot;
+    [SerializeField] Animator gettingShot;
     [SerializeField] PostProcessVolume volume;
-    bool increase;
-    float minSpeed;
-    float maxSpeed;
-    float speed;
+    [SerializeField] bool increase;
+    [SerializeField] float minSpeed;
+    [SerializeField] float maxSpeed;
+    [SerializeField] float speed;
     Vignette vig;
     
     // Start is called before the first frame update
@@ -35,10 +35,11 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             Debug.Log("Collision");
+            increase = true;
             health.Damage();
             sprite.color = new Color(1,0,0,0.5f);
             gettingShot.SetBool("ifShot", true);
-            increase = true;
+            
             //vig.intensity.value += speed * Time.deltaTime;
             //vig.intensity.value += .2f;
             //Destroy(this.gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour
 {
     public Transform target;
-    float cameraSpeed = 0.25f;
+    float cameraSpeed = 0.1f;
     Vector3 velocity = Vector3.zero;
     // Start is called before the first frame update
     void Start()
