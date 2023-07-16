@@ -13,18 +13,22 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        StartCoroutine("Pausing");
+        //StartCoroutine("Pausing");
+        pauseMenuPanel.SetActive(true);
+        Time.timeScale = 0;
     }
     IEnumerator Pausing()
     {
         yield return new WaitForSeconds(0.3f);
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0;
-        StopCoroutine("Pausing");
+
     }
     public void Close()
     {
-        StartCoroutine("Closing");
+        // StartCoroutine("Closing");
+        pauseMenuPanel.SetActive(false);
+        Time.timeScale = 1;
     }
     IEnumerator Closing()
     {
@@ -34,7 +38,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void MainMenu()
     {
-        StartCoroutine("MainMenuScene");
+        // StartCoroutine("MainMenuScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");
     }
     IEnumerator MainMenuScene()
     {
@@ -44,7 +50,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
-        StartCoroutine("Restarting");
+        // StartCoroutine("Restarting");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1;
     }
     IEnumerator Restarting()
     {
@@ -55,7 +64,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void start()
     {
-        StartCoroutine("Starting");
+        //  StartCoroutine("Starting");
+        SceneManager.LoadScene("Main");
+        Time.timeScale = 1;
     }
     IEnumerator Starting()
     {
@@ -65,7 +76,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void Quit()
     {
-        StartCoroutine("Quiting");
+        // StartCoroutine("Quiting");
+        Application.Quit();
     }
     IEnumerator Quiting()
     {
