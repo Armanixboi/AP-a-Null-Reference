@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
         //initialColourTest = this.gameObject.GetComponent<SpriteRenderer>().color;
         sprite = GetComponent<SpriteRenderer>();
         vig = volume.profile.GetSetting<Vignette>();
+        
 
     }
     // Update is called once per frame
@@ -45,9 +46,10 @@ public class Enemy : MonoBehaviour
             //Destroy(this.gameObject);
         }
 
-        if(health.currentHealth <= 0f)
+        if(health.currentHealth <= 0f && gettingShot == true)
         {
-            Destroy(this.gameObject);
+            increase = true;
+            //Destroy(this.gameObject);
         }
        
     }
@@ -69,7 +71,8 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Bullet")
         {
-            gettingShot.SetBool("ifShot", false);
+            //gettingShot.SetBool("ifShot", false);
+            Destroy(this.gameObject);
         }
     }
 }
