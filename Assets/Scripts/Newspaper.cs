@@ -7,6 +7,7 @@ public class Newspaper : MonoBehaviour
     public GameObject newsPaper;
     public Animator newsPaperRead;
     public bool playerCanRead;
+    public playerMovement playerMovementScript;
 
     void Start()
     {
@@ -43,10 +44,12 @@ public class Newspaper : MonoBehaviour
     }
     public void CloseNewsPaper()
     {
+        playerMovementScript.canShoot = true;
         newsPaper.SetActive(false);
     }
     public void OpenNewsPaper()
     {
+        playerMovementScript.canShoot = false;
         newsPaper.SetActive(true);
         newsPaperRead.SetBool("read", true);
     }

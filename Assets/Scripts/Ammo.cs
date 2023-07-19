@@ -9,16 +9,19 @@ public class Ammo : MonoBehaviour
     public Animator ammoPickUpUI;
     public playerMovement playerMovementScript;
 
-
+    
     public void Update()
-    {
+    {  
         if (canPickUpAmmo == true)
         {
             ammoPickUpUI.SetBool("canpickup", true);
+            playerMovementScript.canShoot = false;
         }
         if (canPickUpAmmo == false)
         {
+            
             ammoPickUpUI.SetBool("canpickup", false);
+            playerMovementScript.canShoot = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canPickUpAmmo)
@@ -28,7 +31,6 @@ public class Ammo : MonoBehaviour
             DestroyAmmo();
             
         }
-
     }
     public void OnTriggerEnter2D(Collider2D other)
     {

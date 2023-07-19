@@ -18548,6 +18548,7 @@ MonoBehaviour:
   newsPaper: {fileID: 407973893}
   newsPaperRead: {fileID: 922202401}
   playerCanRead: 0
+  playerMovementScript: {fileID: 0}
 --- !u!4 &922202400
 Transform:
   m_ObjectHideFlags: 0
@@ -79937,6 +79938,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 178957646}
+    - target: {fileID: 7999308156191718500, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     - target: {fileID: 7999308156191718502, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
       propertyPath: m_Name
       value: NewsPaper Reader 1
