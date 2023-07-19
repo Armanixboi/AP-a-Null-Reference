@@ -15741,6 +15741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Notice Board Reader 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -28314,6 +28318,10 @@ PrefabInstance:
     - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_Name
       value: Notice Board Reader 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
@@ -75955,6 +75963,10 @@ PrefabInstance:
     - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_Name
       value: Notice Board Reader 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
