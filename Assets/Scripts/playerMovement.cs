@@ -17,6 +17,7 @@ public class playerMovement : MonoBehaviour
     public Animator spaceToPickUp1;
     public Animator panimator;
     public AudioSource gunShotSFX;
+    public bool canShoot;
 
     //public Camera cam;
     // Start is called before the first frame update
@@ -61,7 +62,7 @@ public class playerMovement : MonoBehaviour
         }
 
         
-        if (Input.GetMouseButtonDown(0) && ammo > 0f)
+        if (Input.GetMouseButtonDown(0) && ammo > 0f && canShoot)
         {
             
             gun.Shoot();

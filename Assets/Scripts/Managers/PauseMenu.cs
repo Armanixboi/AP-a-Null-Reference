@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+    int timer;
 
     void Update()
     {
@@ -13,9 +14,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        StartCoroutine("Pausing");
-        //pauseMenuPanel.SetActive(true);
-        //Time.timeScale = 0;
+        
+        //StartCoroutine("Pausing");
+        pauseMenuPanel.SetActive(true);
+        Time.timeScale = 0;
     }
     IEnumerator Pausing()
     {
@@ -26,9 +28,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void Close()
     {
-         StartCoroutine("Closing");
-        //pauseMenuPanel.SetActive(false);
-        //Time.timeScale = 1;
+        //StartCoroutine("Closing");
+        pauseMenuPanel.SetActive(false);
+        Time.timeScale = 1;
     }
     IEnumerator Closing()
     {
@@ -38,9 +40,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void MainMenu()
     {
-        StartCoroutine("MainMenuScene");
-        //Time.timeScale = 1;
-        //SceneManager.LoadScene("Main Menu");
+        //StartCoroutine("MainMenuScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");
     }
     IEnumerator MainMenuScene()
     {
@@ -50,10 +52,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
-         StartCoroutine("Restarting");
-        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //SceneManager.LoadScene(currentSceneIndex);
-        //Time.timeScale = 1;
+        //StartCoroutine("Restarting");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1;
     }
     IEnumerator Restarting()
     {
@@ -64,9 +66,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void start()
     {
-          StartCoroutine("Starting");
-        //SceneManager.LoadScene("Main");
-        //Time.timeScale = 1;
+        //StartCoroutine("Starting");
+        SceneManager.LoadScene("Main");
+        Time.timeScale = 1;
     }
     IEnumerator Starting()
     {
@@ -76,8 +78,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void Quit()
     {
-         StartCoroutine("Quiting");
-        //Application.Quit();
+        //StartCoroutine("Quiting");
+        Application.Quit();
     }
     IEnumerator Quiting()
     {

@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 playerMovementScript.speed = 0;
+                playerMovementScript.canShoot = false;
 
                 dialogue = npcScript.npcdialogue;
                 npcImage.sprite = npcScript.npcDialogueImage.sprite;
@@ -66,6 +67,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueFinished = true;
         playerMovementScript.speed = 3;
+        playerMovementScript.canShoot = true;
     }
 
     IEnumerator Typing()
