@@ -15,9 +15,9 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         
-        //StartCoroutine("Pausing");
-        pauseMenuPanel.SetActive(true);
-        Time.timeScale = 0;
+        StartCoroutine("Pausing");
+        //pauseMenuPanel.SetActive(true);
+        //Time.timeScale = 0;
     }
     IEnumerator Pausing()
     {
@@ -28,58 +28,59 @@ public class PauseMenu : MonoBehaviour
     }
     public void Close()
     {
-        //StartCoroutine("Closing");
-        pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1;
+        StartCoroutine("Closing");
+        //pauseMenuPanel.SetActive(false);
+        //Time.timeScale = 1;
     }
     IEnumerator Closing()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.3f);
         pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1;
     }
     public void MainMenu()
     {
-        //StartCoroutine("MainMenuScene");
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Main Menu");
+        StartCoroutine("MainMenuScene");
+        //Time.timeScale = 1;
+        //SceneManager.LoadScene("Main Menu");
     }
     IEnumerator MainMenuScene()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("Main Menu");
-        Time.timeScale = 1;
+        
     }
     public void Restart()
     {
-        //StartCoroutine("Restarting");
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
-        Time.timeScale = 1;
+        StartCoroutine("Restarting");
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //SceneManager.LoadScene(currentSceneIndex);
+        //Time.timeScale = 1;
     }
     IEnumerator Restarting()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.3f);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        Time.timeScale = 1;
     }
     public void start()
     {
-        //StartCoroutine("Starting");
-        SceneManager.LoadScene("Main");
-        Time.timeScale = 1;
+        StartCoroutine("Starting");
+        //SceneManager.LoadScene("Main");
+        //Time.timeScale = 1;
     }
     IEnumerator Starting()
     {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("Main");
-        Time.timeScale = 1;
     }
     public void Quit()
     {
-        //StartCoroutine("Quiting");
-        Application.Quit();
+        StartCoroutine("Quiting");
+        //Application.Quit();
     }
     IEnumerator Quiting()
     {
