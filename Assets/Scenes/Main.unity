@@ -15808,6 +15808,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 594594544}
+    - target: {fileID: 6976193353472558426, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
 --- !u!4 &314776939 stripped
@@ -17192,6 +17196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ammo Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9153279708372871483, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
 --- !u!1 &658767990
@@ -18424,7 +18432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153279708372871483, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
@@ -18564,7 +18572,7 @@ MonoBehaviour:
   newsPaper: {fileID: 407973893}
   newsPaperRead: {fileID: 922202401}
   playerCanRead: 0
-  playerMovementScript: {fileID: 0}
+  playerMovementScript: {fileID: 1725367216}
 --- !u!4 &922202400
 Transform:
   m_ObjectHideFlags: 0
@@ -28416,6 +28424,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 1698872292}
+    - target: {fileID: 6976193353472558426, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
 --- !u!4 &1052991002 stripped
@@ -75464,7 +75476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9153279708372871483, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
       propertyPath: m_SortingOrder
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
@@ -75746,6 +75758,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 190890782}
+    - target: {fileID: 6976193353472558426, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
 --- !u!114 &1471770397 stripped
@@ -76073,6 +76089,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 710235030}
+    - target: {fileID: 6976193353472558426, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
 --- !u!114 &1704008037 stripped
@@ -78824,6 +78844,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 904568107}
+    - target: {fileID: 7999308156191718500, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     - target: {fileID: 7999308156191718502, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
       propertyPath: m_Name
       value: NewsPaper Reader 3
@@ -79976,6 +80000,10 @@ PrefabInstance:
       propertyPath: newsPaper
       value: 
       objectReference: {fileID: 305481734}
+    - target: {fileID: 6976193353472558426, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 1725367216}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
 --- !u!4 &6976193353316878068 stripped
