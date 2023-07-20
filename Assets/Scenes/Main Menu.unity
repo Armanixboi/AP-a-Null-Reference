@@ -542,7 +542,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1909398002}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: start
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -877,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1909398000}
+  duration: 0
 --- !u!1 &2012458732
 GameObject:
   m_ObjectHideFlags: 0

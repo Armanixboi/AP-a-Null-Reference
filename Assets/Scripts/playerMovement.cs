@@ -19,14 +19,6 @@ public class playerMovement : MonoBehaviour
     public AudioSource gunShotSFX;
     public bool canShoot;
 
-    //public Camera cam;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
    
     void Update()
     {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
-    int timer;
+    public float duration;
 
     void Update()
     {
@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator Pausing()
     {
+
         yield return new WaitForSeconds(0.3f);
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0;
@@ -28,14 +29,19 @@ public class PauseMenu : MonoBehaviour
     }
     public void Close()
     {
-        StartCoroutine("Closing");
+        StartCoroutine(Closing());
         //pauseMenuPanel.SetActive(false);
         //Time.timeScale = 1;
     }
     IEnumerator Closing()
     {
+        float timer = 0;
+        while (timer < duration) 
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         Time.timeScale = 1;
-        yield return new WaitForSeconds(0.3f);
         pauseMenuPanel.SetActive(false);
     }
     public void MainMenu()
@@ -46,8 +52,13 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator MainMenuScene()
     {
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         Time.timeScale = 1;
-        yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("Main Menu");
         
     }
@@ -60,12 +71,17 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator Restarting()
     {
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         Time.timeScale = 1;
-        yield return new WaitForSeconds(0.3f);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
-    public void start()
+    public void GameScene()
     {
         StartCoroutine("Starting");
         //SceneManager.LoadScene("Main");
@@ -73,8 +89,13 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator Starting()
     {
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         Time.timeScale = 1;
-        yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene("Main");
     }
     public void Quit()
@@ -84,7 +105,12 @@ public class PauseMenu : MonoBehaviour
     }
     IEnumerator Quiting()
     {
-        yield return new WaitForSeconds(0.3f);
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         Application.Quit();
     }
 }

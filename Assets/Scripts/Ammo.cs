@@ -15,13 +15,11 @@ public class Ammo : MonoBehaviour
         if (canPickUpAmmo == true)
         {
             ammoPickUpUI.SetBool("canpickup", true);
-            playerMovementScript.canShoot = false;
         }
         if (canPickUpAmmo == false)
         {
             
             ammoPickUpUI.SetBool("canpickup", false);
-            playerMovementScript.canShoot = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canPickUpAmmo)
@@ -37,6 +35,7 @@ public class Ammo : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canPickUpAmmo = true;
+
         }
     }
 
@@ -45,6 +44,7 @@ public class Ammo : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canPickUpAmmo = false;
+
         }
     }
     public void DestroyAmmo()

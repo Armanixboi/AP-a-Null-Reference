@@ -15313,6 +15313,7 @@ GameObject:
   - component: {fileID: 267301425}
   - component: {fileID: 267301424}
   - component: {fileID: 267301423}
+  - component: {fileID: 267301427}
   m_Layer: 5
   m_Name: Ammo Pick Up UI (3)
   m_TagString: Untagged
@@ -15478,6 +15479,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267301421}
   m_CullTransparentMesh: 1
+--- !u!114 &267301427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267301421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfcade6ba2c2e247ae64b0676c60c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 1725367216}
 --- !u!1 &292573544
 GameObject:
   m_ObjectHideFlags: 0
@@ -16552,6 +16566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1737999505}
+  duration: 0.3
 --- !u!1 &532023708
 GameObject:
   m_ObjectHideFlags: 0
@@ -27843,6 +27858,7 @@ GameObject:
   - component: {fileID: 989858089}
   - component: {fileID: 989858088}
   - component: {fileID: 989858087}
+  - component: {fileID: 989858091}
   m_Layer: 5
   m_Name: Ammo Pick Up UI (1)
   m_TagString: Untagged
@@ -28008,6 +28024,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989858085}
   m_CullTransparentMesh: 1
+--- !u!114 &989858091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989858085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfcade6ba2c2e247ae64b0676c60c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 1725367216}
 --- !u!1 &1013351836
 GameObject:
   m_ObjectHideFlags: 0
@@ -28144,6 +28173,7 @@ GameObject:
   - component: {fileID: 1032836806}
   - component: {fileID: 1032836805}
   - component: {fileID: 1032836804}
+  - component: {fileID: 1032836808}
   m_Layer: 5
   m_Name: Ammo Pick Up UI (2)
   m_TagString: Untagged
@@ -28309,6 +28339,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032836802}
   m_CullTransparentMesh: 1
+--- !u!114 &1032836808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032836802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfcade6ba2c2e247ae64b0676c60c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 1725367216}
 --- !u!1001 &1052991001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28680,7 +28723,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a53d6bb77a1fba54492c321cb5a39639, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -29548,7 +29591,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 0.3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -29639,7 +29682,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1ff1e8bf77246654cb7842548ebb9d4a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -75326,7 +75369,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2b2833f9ff425684ba6e604a1a2230ec, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -76452,7 +76495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88990c96a7e516d47a34e261046dfa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 0
+  ammo: 10
   speed: 3
   rb: {fileID: 1725367215}
   gunActivatorScript1: {fileID: 725333727}
@@ -76461,7 +76504,7 @@ MonoBehaviour:
   spaceToPickUp1: {fileID: 1284310800}
   panimator: {fileID: 1725367217}
   gunShotSFX: {fileID: 1725367213}
-  canShoot: 1
+  canShoot: 0
 --- !u!95 &1725367217
 Animator:
   serializedVersion: 5
@@ -76542,7 +76585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725367212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -3.4, z: 0}
+  m_LocalPosition: {x: -3.2, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013351840}
