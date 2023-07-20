@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxSpeed;
     [SerializeField] float speed;
     Vignette vig;
+    float currentValue;
+    float timer;
     
     // Start is called before the first frame update
     void Start()
@@ -36,10 +38,12 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             Debug.Log("Collision");
+            currentValue = vig.intensity.value;
             increase = true;
             health.Damage();
             sprite.color = new Color(1,0,0,0.5f);
             gettingShot.SetBool("ifShot", true);
+            Debug.Log(vig.intensity.value);
             
             //vig.intensity.value += speed * Time.deltaTime;
             //vig.intensity.value += .2f;
@@ -56,13 +60,14 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        //lerpTest = Vector3.Lerp(, , 1)
-        //gameObject.GetComponent<SpriteRenderer>().ler .color += new Color(0, 0, 0, 1);
-        //volume.profile.TryGetSettings(out vig);
         if(increase)
         {
-            vig.intensity.value += speed * Time.deltaTime;
-            vig.intensity.value = Mathf.Clamp(vig.intensity.value, minSpeed, maxSpeed);
+            timer += Time.deltaTime;
+            vig.intensity.value = Mathf.Lerp(currentValue, maxSpeed + currentValue, timer/speed);
+            if (vig.intensity.value >= maxSpeed + currentValue)
+            {
+                increase = false;
+            }
         }
 
     }
@@ -72,7 +77,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             //gettingShot.SetBool("ifShot", false);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }
