@@ -15758,7 +15758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
@@ -16853,7 +16853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95ad3c0a6f07bed4e8d8394d705b34c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78e17aded50295345934a5ce3b5e4680, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17369,7 +17369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95ad3c0a6f07bed4e8d8394d705b34c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2abe1d62042ab6847826d5833d09897f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28374,7 +28374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
@@ -76008,7 +76008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95ad3c0a6f07bed4e8d8394d705b34c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 962aa76e127c1f3468bf55d54c792499, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76039,7 +76039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558421, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976193353472558425, guid: b1f5dadc336eb164f8f31a0330a9854b, type: 3}
       propertyPath: m_RootOrder
@@ -76618,7 +76618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725367212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -3.4, z: 0}
+  m_LocalPosition: {x: -1.09, y: -2.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013351840}
@@ -78851,6 +78851,10 @@ PrefabInstance:
     - target: {fileID: 7999308156191718502, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
       propertyPath: m_Name
       value: NewsPaper Reader 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999308156191718502, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7999308156191718507, guid: 2f6bcdbb0e5f5714c818d29beab2babe, type: 3}
       propertyPath: m_RootOrder
