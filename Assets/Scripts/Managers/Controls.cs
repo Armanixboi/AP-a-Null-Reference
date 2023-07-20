@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controls : MonoBehaviour
 {
     public GameObject controlsPanel;
+    public float duration;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,28 +20,38 @@ public class Controls : MonoBehaviour
     //Functions////////////////////////////////////////////////////////////////////
     public void ControlsPanel()
     {
-        //StartCoroutine("ControlsPaneling");
-        controlsPanel.SetActive(true);
-        Time.timeScale = 0;
+        StartCoroutine(ControlsPaneling());
+        //controlsPanel.SetActive(true);
+        //Time.timeScale = 0;
     }
     
     public void Close()
     {
-        //StartCoroutine("ClosingControlsPanel");
-        controlsPanel.SetActive(false);
-        Time.timeScale = 1;
+        StartCoroutine(ClosingControlsPanel());
+        //controlsPanel.SetActive(false);
+        //Time.timeScale = 1;
     }
 
     //Coroutines////////////////////////////////////////////////////////////////////
     IEnumerator ClosingControlsPanel()
     {
-        yield return new WaitForSeconds(0.3f);
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         controlsPanel.SetActive(false);
         Time.timeScale = 1;
     }
     IEnumerator ControlsPaneling()
     {
-        yield return new WaitForSeconds(0.3f);
+        float timer = 0;
+        while (timer < duration)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
         controlsPanel.SetActive(true);
         Time.timeScale = 0;
     }
