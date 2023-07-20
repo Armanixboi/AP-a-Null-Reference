@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1909398000}
-  duration: 0
+  duration: 0.3
 --- !u!1 &2012458732
 GameObject:
   m_ObjectHideFlags: 0
