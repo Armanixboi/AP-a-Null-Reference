@@ -6,12 +6,14 @@ public class Door1 : MonoBehaviour
 {
     public Animator door;
     public bool doorCanOpen;
+    public AudioSource doorSFX;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(doorCanOpen == true && other.CompareTag("Player"))
         {
             door.SetBool("dooropen", true);
+            doorSFX.Play();
         }
         
 
