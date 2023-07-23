@@ -6,7 +6,8 @@ public class barricadeOpen : MonoBehaviour
 {
     //public GameObject p1;
     //public GameObject p2;
-    public HealthSystem npchealth;
+    public HealthSystem npchealth1;
+    public HealthSystem npchealth2;
     public Door1 doorScript;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class barricadeOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(npchealth.currentHealth <= 0f)
+        if(npchealth1.currentHealth <= 0f && npchealth2.currentHealth <=0f)
         {
             doorScript.doorCanOpen = true;
             Destroy(this.gameObject);
