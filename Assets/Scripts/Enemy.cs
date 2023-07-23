@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     Vector3 initialColour;
     Color initialColourTest;
     SpriteRenderer sprite;
-    [SerializeField] Animator gettingShot;
+    //[SerializeField] Animator gettingShot;
     [SerializeField] PostProcessVolume volume;
     [SerializeField] bool increase;
     [SerializeField] float minSpeed;
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
             increase = true;
             health.Damage();
             sprite.color = new Color(1,0,0,0.5f);
-            gettingShot.SetBool("ifShot", true);
+            //gettingShot.SetBool("ifShot", true);
             Debug.Log(vig.intensity.value);
             
             //vig.intensity.value += speed * Time.deltaTime;
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
             //Destroy(this.gameObject);
         }
 
-        if(health.currentHealth <= 0f && gettingShot == true)
+        if(health.currentHealth <= 0f /*&& gettingShot == true*/)
         {
             increase = true;
             //Destroy(this.gameObject);
