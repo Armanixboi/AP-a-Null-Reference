@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         {
             timer += Time.deltaTime;
             vig.intensity.value = Mathf.Lerp(currentValue, maxSpeed + currentValue, timer/speed);
-            if (vig.intensity.value >= maxSpeed + currentValue)
+            if (vig.intensity.value >= maxSpeed + currentValue && health.currentHealth <= 0f)
             {
                 increase = false;
                 Destroy(gameObject);
