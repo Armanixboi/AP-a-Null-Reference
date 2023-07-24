@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
     {
         bulletFeed.Play();
         Destroy(this.gameObject, timer);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
