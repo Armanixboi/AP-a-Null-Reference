@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
             if (vig.intensity.value >= maxSpeed + currentValue)
             {
                 increase = false;
+                Destroy(gameObject);
             }
         }
 
