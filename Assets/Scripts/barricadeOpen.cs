@@ -13,18 +13,27 @@ public class barricadeOpen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (npchealth1.currentHealth <= 0f && npchealth2.currentHealth <= 0f || doorHealth.currentHealth <= 0f)
+        if (collision.gameObject.tag == "Bullet")
         {
-            doorScript.doorCanOpen = true;
-            Destroy(this.gameObject);
+            doorHealth.Damage();
         }
 
-
     }
+        // Update is called once per frame
+        void Update()
+        {
+            if (npchealth1.currentHealth <= 0f && npchealth2.currentHealth <= 0f || doorHealth.currentHealth <= 0f)
+            {
+                doorScript.doorCanOpen = true;
+                Destroy(this.gameObject);
+            }
+
+
+ 
+        }
 }

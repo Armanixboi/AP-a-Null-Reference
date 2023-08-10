@@ -8,22 +8,40 @@ public class Bullet : MonoBehaviour
     public HealthSystem health;
     public float damage = 1f;
     public ParticleSystem bulletFeed;
+
+
     // Start is called before the first frame update
+
+
     void Start()
     {
         bulletFeed.Play();
         Destroy(this.gameObject, timer);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //Physics2D.IgnoreCollision(player.GetComponent<CapsuleCollider2D>(), GetComponent<CapsuleCollider2D>());
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+      /*  if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("HIT");
+            //Destroy(collision.gameObject);   
+            //Destroy(this.gameObject);
+            health.Damage();
+            
+        }*/
+        
         
     }
 
-     void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -31,17 +49,7 @@ public class Bullet : MonoBehaviour
             //Destroy(collision.gameObject);   
             //Destroy(this.gameObject);
             health.Damage();
-            
-        }
-        
-        
-    }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Destroy(this.gameObject);
         }
     }
 }

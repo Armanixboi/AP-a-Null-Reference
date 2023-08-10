@@ -10,10 +10,22 @@ public class Gun : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 mousePos;
     public Camera cam;
+
+
+    private Collider2D player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
+        Debug.Log(player + "dsaaaaaaaaaaaa");
+    }
+
     public void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPref, startPoint.position, startPoint.rotation);
+        Vector2 offset = (Vector2)transform.position - mousePos;
+        GameObject bullet = Instantiate(bulletPref, (Vector2)transform.position - offset.normalized, startPoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = transform.up * bulletSpeed;
+
     }
     private void Update()
     {
