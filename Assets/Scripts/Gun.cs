@@ -17,7 +17,6 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
-        Debug.Log(player + "dsaaaaaaaaaaaa");
     }
 
     public void Shoot()
