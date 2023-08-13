@@ -18,7 +18,6 @@ public class Ammo : MonoBehaviour
         }
         if (canPickUpAmmo == false)
         {
-            
             ammoPickUpUI.SetBool("canpickup", false);
         }
 
