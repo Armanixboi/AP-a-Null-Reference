@@ -21807,7 +21807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 683401184}
-  sprite: {fileID: 0}
+  sprite: {fileID: 683401188}
   volume: {fileID: 292573549}
   increase: 0
   minSpeed: -0.15
