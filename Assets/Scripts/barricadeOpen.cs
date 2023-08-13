@@ -20,7 +20,7 @@ public class barricadeOpen : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            doorHealth.Damage();
+            //doorHealth.Damage();
         }
 
     }

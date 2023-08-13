@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     Vector3 lerpTest;
     Vector3 initialColour;
     Color initialColourTest;
-    SpriteRenderer sprite;
+    [SerializeField] SpriteRenderer sprite;
     //[SerializeField] Animator gettingShot;
     [SerializeField] PostProcessVolume volume;
     [SerializeField] bool increase;

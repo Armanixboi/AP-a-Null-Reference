@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float timer;
     public HealthSystem health;
-    public float damage = 1f;
+    //public float damage = 1f;
     public ParticleSystem bulletFeed;
 
 
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("HIT");
             //Destroy(collision.gameObject);   
             //Destroy(this.gameObject);
-            health.Damage();
+            //health.Damage();
 
         }
     }
