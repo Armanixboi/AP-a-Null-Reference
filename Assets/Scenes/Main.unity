@@ -542,6 +542,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 0.5
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!1 &118057339
 GameObject:
   m_ObjectHideFlags: 0
@@ -19189,6 +19190,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 0.5
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!1 &267301421
 GameObject:
   m_ObjectHideFlags: 0
@@ -19437,7 +19439,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -19461,8 +19463,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292573544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1500244, y: -4.1500244, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.1500244, y: -4.1500244, z: -6.18}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -19480,6 +19482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1725367219}
+  zOffset: -2
 --- !u!114 &292573549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20120,6 +20123,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 5
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!1 &346003764
 GameObject:
   m_ObjectHideFlags: 0
@@ -20189,7 +20193,10 @@ MonoBehaviour:
   npchealth1: {fileID: 255651891}
   npchealth2: {fileID: 0}
   doorHealth: {fileID: 380291582}
+  zoomOut: {fileID: 292573546}
   doorScript: {fileID: 881629515}
+  camDistance: 0.5
+  MainPlayer: {fileID: 1725367216}
 --- !u!61 &380291581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20203,7 +20210,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.043006897}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -20214,7 +20221,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 2, y: 0.9139862}
   m_EdgeRadius: 0
 --- !u!114 &380291582
 MonoBehaviour:
@@ -20250,6 +20257,7 @@ MonoBehaviour:
   minSpeed: -0.15
   maxSpeed: -0.3
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!4 &380291584
 Transform:
   m_ObjectHideFlags: 0
@@ -21735,7 +21743,10 @@ MonoBehaviour:
   npchealth1: {fileID: 2102702665}
   npchealth2: {fileID: 1706584142}
   doorHealth: {fileID: 683401184}
+  zoomOut: {fileID: 292573546}
   doorScript: {fileID: 8457085417633031058}
+  camDistance: 0.5
+  MainPlayer: {fileID: 1725367216}
 --- !u!114 &683401184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21813,6 +21824,7 @@ MonoBehaviour:
   minSpeed: -0.15
   maxSpeed: -0.3
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!212 &683401188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22761,6 +22773,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 5
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!1001 &840409557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80404,6 +80417,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 5
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!1 &1389953531
 GameObject:
   m_ObjectHideFlags: 0
@@ -81223,7 +81237,10 @@ MonoBehaviour:
   npchealth1: {fileID: 255651891}
   npchealth2: {fileID: 67211076}
   doorHealth: {fileID: 1617268080}
+  zoomOut: {fileID: 292573546}
   doorScript: {fileID: 1453174055}
+  camDistance: 0.5
+  MainPlayer: {fileID: 1725367216}
 --- !u!61 &1617268079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81284,6 +81301,7 @@ MonoBehaviour:
   minSpeed: -0.15
   maxSpeed: -0.3
   speed: 1
+  playerSpeed: {fileID: 0}
 --- !u!212 &1617268082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -81740,7 +81758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914206a228a473489abc17b3abcf729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   currentHealth: 0
   damageAmount: 1
 --- !u!114 &1706584143
@@ -81756,12 +81774,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1706584142}
-  sprite: {fileID: 0}
+  sprite: {fileID: 1706584144}
   volume: {fileID: 292573549}
   increase: 0
   minSpeed: 0.25
   maxSpeed: 0.5
   speed: 1
+  playerSpeed: {fileID: 1725367216}
 --- !u!212 &1706584144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85398,12 +85417,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 2102702665}
-  sprite: {fileID: 0}
+  sprite: {fileID: 2102702663}
   volume: {fileID: 292573549}
   increase: 0
   minSpeed: 0.25
   maxSpeed: 0.5
   speed: 1
+  playerSpeed: {fileID: 1725367216}
 --- !u!61 &2102702667
 BoxCollider2D:
   m_ObjectHideFlags: 0

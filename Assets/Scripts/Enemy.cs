@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxSpeed;
     [SerializeField] float speed;
     Vignette vig;
+    [SerializeField] playerMovement playerSpeed;
     float currentValue;
     float timer;
     
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
 
         if(health.currentHealth <= 0f /*&& gettingShot == true*/)
         {
+            playerSpeed.speed -= 0.5f;
             increase = true;
             //Destroy(this.gameObject);
         }

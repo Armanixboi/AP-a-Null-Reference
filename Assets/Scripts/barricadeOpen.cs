@@ -9,7 +9,10 @@ public class barricadeOpen : MonoBehaviour
     public HealthSystem npchealth1;
     public HealthSystem npchealth2;
     public HealthSystem doorHealth;
+    public Camera zoomOut;
     public Door1 doorScript;
+    [SerializeField] float camDistance;
+    [SerializeField] playerMovement MainPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class barricadeOpen : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             //doorHealth.Damage();
+            
         }
 
     }
@@ -29,6 +33,8 @@ public class barricadeOpen : MonoBehaviour
         {
             if (npchealth1.currentHealth <= 0f && npchealth2.currentHealth <= 0f || doorHealth.currentHealth <= 0f)
             {
+                zoomOut.orthographicSize += camDistance;
+                MainPlayer.speed += 0.5f;
                 doorScript.doorCanOpen = true;
                 Destroy(this.gameObject);
             }
