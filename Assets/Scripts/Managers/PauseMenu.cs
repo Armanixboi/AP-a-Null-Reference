@@ -7,10 +7,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
     public float duration;
+    public playerMovement playerMovement;
 
     void Update()
     {
-        
+        if(pauseMenuPanel.activeSelf)
+        {
+            playerMovement.canShoot = false;
+        }
     }
     public void Pause()
     {
@@ -23,6 +27,7 @@ public class PauseMenu : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.3f);
+        //playerMovement.canShoot = false;
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0;
 
@@ -41,6 +46,7 @@ public class PauseMenu : MonoBehaviour
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
+        playerMovement.canShoot = true;
         Time.timeScale = 1;
         pauseMenuPanel.SetActive(false);
     }

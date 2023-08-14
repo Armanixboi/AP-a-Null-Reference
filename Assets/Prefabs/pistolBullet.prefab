@@ -4869,7 +4869,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 1
   health: {fileID: -4139751917383793560}
-  damage: 1
   bulletFeed: {fileID: 3847334826379290523}
 --- !u!50 &3994051849125361874
 Rigidbody2D:
@@ -4978,7 +4977,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6466797280892710197, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f32c88d9257a054a8d6cf9a68b517cb, type: 3}
 --- !u!4 &53188808805383512 stripped
 Transform:

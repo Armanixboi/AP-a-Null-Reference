@@ -6,6 +6,8 @@ public class Controls : MonoBehaviour
 {
     public GameObject controlsPanel;
     public float duration;
+    public playerMovement playerMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,10 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(controlsPanel.activeSelf)
+        {
+            playerMovement.canShoot = false;
+        }
     }
     //Functions////////////////////////////////////////////////////////////////////
     public void ControlsPanel()
@@ -41,6 +46,7 @@ public class Controls : MonoBehaviour
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
+        playerMovement.canShoot = true;
         controlsPanel.SetActive(false);
         Time.timeScale = 1;
     }
@@ -52,6 +58,7 @@ public class Controls : MonoBehaviour
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
+       // playerMovement.canShoot = false;
         controlsPanel.SetActive(true);
         Time.timeScale = 0;
     }

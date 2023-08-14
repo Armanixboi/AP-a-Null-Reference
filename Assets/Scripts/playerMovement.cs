@@ -22,18 +22,21 @@ public class playerMovement : MonoBehaviour
    
     void Update()
     {
-        //Movement
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
-        //Animation
-       panimator.SetFloat("Horizontal", moveX);
-       panimator.SetFloat("Vertical", moveY);
-       panimator.SetFloat("Speed", moveDir.sqrMagnitude);
+        if (canShoot)
+        {
+            //Movement
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
+            //Animation
+            panimator.SetFloat("Horizontal", moveX);
+            panimator.SetFloat("Vertical", moveY);
+            panimator.SetFloat("Speed", moveDir.sqrMagnitude);
 
-        moveDir = new Vector2(moveX, moveY).normalized;
-        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-       
+            moveDir = new Vector2(moveX, moveY).normalized;
+            //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        }
+
         if (gunActivatorScript1.canPickUpGun == true)
         {
             spaceToPickUp1.SetBool("canpickup", true);
