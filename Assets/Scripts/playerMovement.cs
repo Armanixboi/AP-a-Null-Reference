@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
+    public Text ammoCounter;
     public float ammo = 0f;
     public float speed;
     public Rigidbody2D rb;
@@ -64,7 +66,8 @@ public class playerMovement : MonoBehaviour
             ammo -= 1f;
             gunShotSFX.Play();
         }
-        
+
+        ammoCounter.text = ammo.ToString();
     }
 
     public void PickedUpAmmo()
