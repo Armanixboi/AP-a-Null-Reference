@@ -20262,7 +20262,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 5
   speed: 1
-  playerSpeed: {fileID: 0}
+  playerSpeed: {fileID: 1725367216}
 --- !u!1 &346003764
 GameObject:
   m_ObjectHideFlags: 0
@@ -21564,7 +21564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607234224}
   - component: {fileID: 607234223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23214,7 +23214,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 5
   speed: 1
-  playerSpeed: {fileID: 0}
+  playerSpeed: {fileID: 1725367216}
 --- !u!1001 &840409557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80575,7 +80575,7 @@ GameObject:
   - component: {fileID: 1332461957}
   m_Layer: 0
   m_Name: Watchman - Ahmed 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80795,7 +80795,7 @@ MonoBehaviour:
   minSpeed: 0.25
   maxSpeed: 0.5
   speed: 1
-  playerSpeed: {fileID: 0}
+  playerSpeed: {fileID: 1725367216}
 --- !u!1 &1389953531
 GameObject:
   m_ObjectHideFlags: 0

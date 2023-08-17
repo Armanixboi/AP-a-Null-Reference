@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float timer;
+    public float timer = 0.75f;
     public HealthSystem health;
     //public float damage = 1f;
     public ParticleSystem bulletFeed;
@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
     {
         bulletFeed.Play();
         Destroy(this.gameObject, timer);
+        //Physics2D.IgnoreLayerCollision(middle);
     }
 
     // Update is called once per frame

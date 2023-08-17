@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
 
         if(health.currentHealth <= 0f /*&& gettingShot == true*/)
         {
-            playerSpeed.speed -= 0.5f;
+            playerSpeed.speed -= 0.15f;
             increase = true;
             //Destroy(this.gameObject);
         }

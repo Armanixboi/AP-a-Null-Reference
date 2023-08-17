@@ -24,6 +24,7 @@ public class playerMovement : MonoBehaviour
    
     void Update()
     {
+        
         if (canShoot)
         {
             //Movement
@@ -58,13 +59,21 @@ public class playerMovement : MonoBehaviour
             PickedUpLevel2Ammo();
         }
 
-        
+
         if (Input.GetMouseButtonDown(0) && ammo > 0f && canShoot)
         {
+            Vector2 mousePosition = Input.mousePosition;
+            Vector2 screen = new Vector2(Screen.width, Screen.height);
+            mousePosition.x /= screen.x;
+            mousePosition.y /= screen.y;
+
+            if (!(mousePosition.x < 0.0793 && mousePosition.y > 0.872)  && !(mousePosition.x > 0.9 && mousePosition.y > 0.872))
+            {
+                gun.Shoot();
+                ammo -= 1f;
+                gunShotSFX.Play();
+            }
             
-            gun.Shoot();
-            ammo -= 1f;
-            gunShotSFX.Play();
         }
 
         ammoCounter.text = ammo.ToString();
