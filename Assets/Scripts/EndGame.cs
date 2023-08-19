@@ -6,6 +6,7 @@ public class EndGame : MonoBehaviour
 {
     public bool canEndIt;
     public Animator startWorkingUI;
+    public playerMovement playerMovementScript;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class EndGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            playerMovementScript.canShoot = false;
             canEndIt = true;
         }
     }
@@ -37,6 +39,7 @@ public class EndGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            playerMovementScript.canShoot = true;
             canEndIt = false;
         }
     }

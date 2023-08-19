@@ -25,8 +25,8 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         
-        if (canShoot)
-        {
+        //if (canShoot)
+        //{
             //Movement
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
@@ -38,7 +38,7 @@ public class playerMovement : MonoBehaviour
 
             moveDir = new Vector2(moveX, moveY).normalized;
             //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        }
+       // }
 
         if (gunActivatorScript1.canPickUpGun == true)
         {
