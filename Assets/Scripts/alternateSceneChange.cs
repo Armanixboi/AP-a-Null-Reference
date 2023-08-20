@@ -14,9 +14,9 @@ public class alternateSceneChange : MonoBehaviour
     [SerializeField] float effectLimit;
     [SerializeField] GameObject detective;
     [SerializeField] DialogueManager dialogueManagerScript;
-    [SerializeField] EndCreditsChecker4 endCreditsChecker4Script;
+    //[SerializeField] EndCreditsChecker4 endCreditsChecker4Script;
     [SerializeField] string endCredits4Scene;
-    [SerializeField] string endCredits3Scene;
+    //[SerializeField] string endCredits3Scene;
 
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class alternateSceneChange : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+   /* private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Detective - Sasa" &&  dialogueManagerScript.endIt == true && endCreditsChecker4Script.canEnd == true)
         {
@@ -46,6 +46,6 @@ public class alternateSceneChange : MonoBehaviour
 
             //}
         }
-    }
+    }*/
 
 }

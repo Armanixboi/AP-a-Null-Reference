@@ -543,6 +543,91 @@ MonoBehaviour:
   maxSpeed: 0.25
   speed: 1
   playerSpeed: {fileID: 0}
+--- !u!1 &107886445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107886448}
+  - component: {fileID: 107886447}
+  - component: {fileID: 107886446}
+  - component: {fileID: 107886449}
+  m_Layer: 0
+  m_Name: Go To Ending 3
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &107886446
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107886445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.7547846, y: -0.15871048}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1.0666667, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.236124, y: 2.0399017}
+  m_EdgeRadius: 0
+--- !u!222 &107886447
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107886445}
+  m_CullTransparentMesh: 1
+--- !u!224 &107886448
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107886445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 31.08, y: 50.12}
+  m_SizeDelta: {x: 1.0666667, y: 1.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &107886449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107886445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6280c422d2454a540aea85e0de44bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: EndCredits3
 --- !u!1 &118057339
 GameObject:
   m_ObjectHideFlags: 0
@@ -20741,6 +20826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entered: 0
   canEnd: 0
+  goToEndCreditsScene3: {fileID: 107886445}
 --- !u!1 &407973893
 GameObject:
   m_ObjectHideFlags: 0
@@ -23124,7 +23210,7 @@ MonoBehaviour:
   - Yet everyone are getting back to work as if nothing had happened
   - I don't know if it's the country or this place but it keeps getting crazier and
     crazier.
-  - That Takyer guy mainly couldn't care less, he forces and pushes his colleagues
+  - That Takyar guy mainly couldn't care less, he forces and pushes his colleagues
     too close to the edge.
   - Idk how he has pulled it off but somehow he is able to keep this company and
     his employees running even during all this Calamities
@@ -33542,7 +33628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1013351837
 Rigidbody2D:
   serializedVersion: 4
@@ -33571,7 +33657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013351836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8733123ce65c4f34f914329d2538c8be, type: 3}
   m_Name: 
@@ -82364,7 +82450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 1329977841}
-  ammo: 50
+  ammo: 0
   speed: 3
   rb: {fileID: 1725367215}
   gunActivatorScript1: {fileID: 725333727}
@@ -82373,7 +82459,7 @@ MonoBehaviour:
   spaceToPickUp1: {fileID: 1284310800}
   panimator: {fileID: 1725367217}
   gunShotSFX: {fileID: 1725367213}
-  canShoot: 1
+  canShoot: 0
 --- !u!95 &1725367217
 Animator:
   serializedVersion: 5
@@ -82454,7 +82540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725367212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.26, y: 53.47, z: 0}
+  m_LocalPosition: {x: -1.2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1013351840}
@@ -82537,9 +82623,7 @@ MonoBehaviour:
   effectLimit: 1.25
   detective: {fileID: 392036099}
   dialogueManagerScript: {fileID: 169544803}
-  endCreditsChecker4Script: {fileID: 392036109}
   endCredits4Scene: EndCredits4
-  endCredits3Scene: EndCredits3
 --- !u!1 &1737999505
 GameObject:
   m_ObjectHideFlags: 0
