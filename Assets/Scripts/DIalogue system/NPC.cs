@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
     public List<string> npcdialogue;
 
 
+
     private void Start()
     {
         dialogueManager = FindAnyObjectByType<DialogueManager>();

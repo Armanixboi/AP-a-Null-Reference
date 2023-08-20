@@ -13,7 +13,12 @@ public class alternateSceneChange : MonoBehaviour
     Vignette vign;
     [SerializeField] float effectLimit;
     [SerializeField] GameObject detective;
-    [SerializeField] DialogueManager endDialogue;
+    [SerializeField] DialogueManager dialogueManagerScript;
+    [SerializeField] EndCreditsChecker4 endCreditsChecker4Script;
+    [SerializeField] string endCredits4Scene;
+    [SerializeField] string endCredits3Scene;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +30,16 @@ public class alternateSceneChange : MonoBehaviour
     {
         if (vign.intensity.value >= effectLimit)
         {
-            SceneManager.LoadScene("EndCredits4");
+            SceneManager.LoadScene(endCredits4Scene);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Detective - Sasa" && endDialogue.dialogue.Count == 0)
+        if (collision.gameObject.name == "Detective - Sasa" &&  dialogueManagerScript.endIt == true && endCreditsChecker4Script.canEnd == true)
         {
 
-            SceneManager.LoadScene("EndCredits3");
+            SceneManager.LoadScene(endCredits3Scene);
             Debug.Log("Next Scene");
 
 

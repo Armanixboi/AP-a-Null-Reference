@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueFinished = true;
     private bool finalDialogueFinished;
     public playerMovement playerMovementScript;
+    public bool endIt;
 
     private void Start()
     {    
@@ -63,12 +64,14 @@ public class DialogueManager : MonoBehaviour
 
     public void EndText()
     {
+
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
         dialogueFinished = true;
         playerMovementScript.speed = 3;
         playerMovementScript.canShoot = true;
+        endIt = true;
     }
 
     IEnumerator Typing()
