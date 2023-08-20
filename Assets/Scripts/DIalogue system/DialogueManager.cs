@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,11 +15,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI npcName;
     public Image npcImage;
     public List<string> dialogue;
-    private int index;
+    public int index;
     public GameObject nextButton;
     public float wordSpeed;
     public NPC npcScript;
-    private bool dialogueFinished = true;
+    public bool dialogueFinished = true;
     private bool finalDialogueFinished;
     public playerMovement playerMovementScript;
 
