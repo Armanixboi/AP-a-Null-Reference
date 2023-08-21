@@ -20,7 +20,7 @@ public class playerMovement : MonoBehaviour
     public Animator panimator;
     public AudioSource gunShotSFX;
     public bool canShoot;
-
+    [SerializeField] GameObject report;
    
     void Update()
     {
@@ -88,6 +88,7 @@ public class playerMovement : MonoBehaviour
     {
         gunActivatorScript1.ActivateObjects();
         panimator.SetBool("ifPickedUpGun", true);
+        report.SetActive(true);
     }
 
     public void PickedUpLevel2Ammo()

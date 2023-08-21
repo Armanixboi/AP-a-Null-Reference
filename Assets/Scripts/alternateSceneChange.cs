@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class alternateSceneChange : MonoBehaviour
@@ -16,6 +17,8 @@ public class alternateSceneChange : MonoBehaviour
     [SerializeField] DialogueManager dialogueManagerScript;
     //[SerializeField] EndCreditsChecker4 endCreditsChecker4Script;
     [SerializeField] string endCredits4Scene;
+    [SerializeField] playerMovement player;
+    [SerializeField] Button reporting;
     //[SerializeField] string endCredits3Scene;
 
 
@@ -32,6 +35,8 @@ public class alternateSceneChange : MonoBehaviour
         {
             SceneManager.LoadScene(endCredits4Scene);
         }
+
+
     }
 
    /* private void OnTriggerStay2D(Collider2D collision)
